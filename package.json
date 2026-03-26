@@ -1,7 +1,7 @@
 {
-  "name": "medibank",
+  "name": "medqs",
   "version": "1.0.0",
-  "description": "medibank — Medical Learning Platform",
+  "description": "MedQs — Medical Questions Platform for Clinical Learning",
   "scripts": {
     "install:all": "cd backend && npm install && cd ../frontend && npm install",
     "dev:backend": "cd backend && npm run dev",

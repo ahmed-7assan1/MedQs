@@ -1,6 +1,6 @@
-# 🏥 medibank — Medical Learning Platform
+# 🏥 MedQs — Medical Questions Platform
 
-A full-stack medical education platform inspired by AMBOSS/UWorld, built with Next.js, Express, and MongoDB.
+A full-stack medical education platform inspired by AMBOSS/UWorld, built with Next.js, Express, and MongoDB. Master clinical knowledge through AI-powered questions and adaptive learning.
 
 ---
 
@@ -20,7 +20,7 @@ A full-stack medical education platform inspired by AMBOSS/UWorld, built with Ne
 ## 📁 Project Structure
 
 ```
-medibank/
+medqs/
 ├── backend/
 │   ├── config/          # DB connection
 │   ├── controllers/     # Route handlers
@@ -59,7 +59,7 @@ medibank/
 
 ```bash
 git clone <repo-url>
-cd medibank
+cd medqs
 
 # Backend
 cd backend
@@ -91,8 +91,8 @@ npm run seed
 ```
 
 This creates:
-- **Admin:** admin@medibank.com / admin123
-- **Student:** student@medibank.com / student123
+- **Admin:** admin@medqs.com / admin123
+- **Student:** student@medqs.com / student123
 - 3 academic years, 6 subjects, 6 questions, 5 flashcard decks
 
 ### 4. Run the servers
@@ -114,7 +114,7 @@ npm run dev     # runs on http://localhost:3000
 ### Backend (`backend/.env`)
 ```env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/medibank
+MONGODB_URI=mongodb://localhost:27017/medqs
 JWT_SECRET=your_super_secret_key_here
 JWT_EXPIRE=7d
 NODE_ENV=development

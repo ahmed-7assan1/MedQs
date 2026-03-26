@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'DM Sans', system-ui, sans-serif;
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --text-muted: #64748b;
+    --primary: #0ea5e9;
+  }
+
+  .dark {
+    --bg: #0a0f1e;
+    --surface: #111827;
+    --border: #1e293b;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --primary: #38bdf8;
+  }
+
+  * { font-family: var(--font-sans); }
+  body { background: var(--bg); color: var(--text); }
+  h1, h2, h3 { letter-spacing: -0.02em; }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm;
+  }
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium px-4 py-2 rounded-xl transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200 font-medium px-4 py-2 rounded-xl transition-all active:scale-95;
+  }
+  .btn-ghost {
+    @apply hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 font-medium px-3 py-2 rounded-xl transition-all;
+  }
+  .input {
+    @apply w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent placeholder:text-gray-400 transition-all;
+  }
+  .label {
+    @apply text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5 block;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg text-xs font-medium;
+  }
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100;
+  }
+  .sidebar-link.active {
+    @apply bg-primary-50 dark:bg-primary-950 text-primary-700 dark:text-primary-300;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
+.dark ::-webkit-scrollbar-thumb { background: #334155; }
+
+/* Markdown styles */
+.prose-medical h1, .prose-medical h2, .prose-medical h3 { @apply font-semibold text-gray-900 dark:text-gray-100; }
+.prose-medical strong { @apply text-primary-700 dark:text-primary-300 font-semibold; }
+.prose-medical p { @apply text-gray-700 dark:text-gray-300 leading-relaxed; }
+.prose-medical ul { @apply list-disc pl-5 space-y-1; }
+.prose-medical ol { @apply list-decimal pl-5 space-y-1; }
+
+/* Flashcard flip */
+.perspective { perspective: 1000px; }
+.card-inner { transition: transform 0.6s; transform-style: preserve-3d; }
+.card-inner.flipped { transform: rotateY(180deg); }
+.card-face { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.card-back { transform: rotateY(180deg); }

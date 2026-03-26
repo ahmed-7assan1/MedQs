@@ -12,9 +12,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>medibank — Medical Learning Platform</title>
-        <meta name="description" content="The modern medical learning platform for students" />
+        <title>MedQs — Medical Questions Platform</title>
+        <meta name="description" content="Master clinical knowledge with MedQs - AI-powered question bank for medical learning" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0ea5e9" />
       </head>
       <body>
         {children}
